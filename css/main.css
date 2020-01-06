@@ -69,3 +69,53 @@
 .input--text::-webkit-input-placeholder {
     color: #cacaca;
 }
+
+
+/* HEADER */
+header {
+    border-bottom: 1px solid rgba(0, 0, 0, .75);
+    box-shadow: 0 0 5px rgba(0, 0, 0, .75);
+    background: #fff;
+}
+
+header .inner {
+    max-width: 980px;
+    height: 78px;
+    /* 가운데 정렬 - 자주 쓰는 방법 */
+    /* 조건: 가로 너비가 정의되어 있어야함 */
+    margin: 0 auto;
+}
+
+header .menu-group {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+header .logo {
+    margin-right: 10px;
+}
+
+header .logo a {
+    background: url("../img/logo.svg");
+    width: 32px;
+    height: 32px;
+    display: block;
+    /* 텍스트를 화면에 보이지 않게 하기 위해 왼쪽으로 들여쓰기 */
+    /* 9999: 대체 텍스트 약속, 텍스트를 사라지게 하기 위한 수치로 받아들임 */
+    text-indent: -9999px;
+}
+
+header .logo a:hover {
+    background: url("../img/logo_on.svg");
+}
+
+header .main-menu {
+    display: flex;
+}
+
+header .main-menu li a {
+    padding: 10px;
+    display: block;
+    color: #3c4146;
+}
