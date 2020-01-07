@@ -11,6 +11,8 @@ a {
     text-decoration: none;
 }
 
+
+
 /* 전역 스타일 */
 /* BUTTON */
 .btn {
@@ -29,7 +31,6 @@ a {
     position: relative;
     color: #333;
 }
-
 .btn:hover::before {
     content: "";
     position: absolute;
@@ -39,7 +40,6 @@ a {
     height: 100%;
     background: rgba(0, 0, 0, .07)
 }
-
 .btn.btn--primary {
     border: 1px solid #65b836;
     color: #fff;
@@ -58,14 +58,12 @@ a {
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075);
     font-size: 16px;
 }
-
 .input--text:focus {
     border-color: #51a7e8;
     /* 원래의 옵션을 유지한채 포커스됬을때의 옵션 추가("," 으로 구분) */
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075),
-        0 0 5px rgba(81, 167, 232, 0.5);
+                0 0 5px rgba(81, 167, 232, 0.5);
 }
-
 /* Vendor Prefix: 브라우저 업체별 접두사 */
 /* 표준은 아니지만 실험적으로 동작이 될수도 있다 */
 /* webkit: 크롬 */
@@ -82,14 +80,39 @@ a {
     clear: both;
     display: block;
 }
-
 .float--left {
     float: left;
 }
-
 .float--right {
     float: right;
 }
+
+/* SUMMARY */
+.summary__title {
+    font-size: 38px;
+    font-weight: 300;
+    line-height: 1.25;
+    margin-bottom: 18px;
+}
+.summary__description {
+    font-size: 26px;
+    font-weight: 300;
+    color: #767676;
+    line-height: 1.5;
+}
+
+/* SECTION & INNER */
+.section {
+    /* absolute가 걸리지 않는 것을 방지하기 위해 일단 position: relative;를 선언 */
+    position: relative;
+}
+.section .inner {
+    max-width: 980px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+}
+
 
 
 /* HEADER */
@@ -98,25 +121,17 @@ header {
     box-shadow: 0 0 5px rgba(0, 0, 0, .75);
     background: #fff;
 }
-
 header .inner {
-    max-width: 980px;
     height: 78px;
-    /* 가운데 정렬 - 자주 쓰는 방법 */
-    /* 조건: 가로 너비가 정의되어 있어야함 */
-    margin: 0 auto;
 }
-
 header .menu-group {
     display: flex;
     align-items: center;
     height: 100%;
 }
-
 header .logo {
     margin-right: 10px;
 }
-
 header .logo a {
     background: url("../img/logo.svg");
     width: 32px;
@@ -126,66 +141,91 @@ header .logo a {
     /* 9999: 대체 텍스트 약속, 텍스트를 사라지게 하기 위한 수치로 받아들임 */
     text-indent: -9999px;
 }
-
 header .logo a:hover {
     background: url("../img/logo_on.svg");
 }
-
 header .main-menu {
     display: flex;
 }
-
 header .main-menu li a {
     padding: 10px;
     display: block;
     color: #3c4146;
 }
-
 header .main-menu li a:hover {
     color: #4078c5;
 }
-
 header .sign-group {
     display: flex;
     align-items: center;
     height: 100%;
 }
-
 header .btn-group {
     order: 2;
     display: flex;
 }
-
 header .btn-group .sign-in {
     margin-right: 4px;
 }
-
 #search-form {
     order: 1;
     margin-right: 12px;
 }
-
 #search {
     width: 160px;
     font-size: 14px;
 }
-
 #search+[type="submit"] {
     display: none;
 }
-
 header .sub-menu {
     display: flex;
     margin-right: 10px;
 }
-
 header .sub-menu li a {
     padding: 8px;
     display: block;
     font-size: 13px;
     color: #3c4146;
 }
-
 header .sub-menu li a:hover {
     color: #4078c0;
+}
+
+
+/* VISUAL */
+.section--visual {
+    /* 배경 이미지 설정 */
+    background-image: url("../img/bg.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    /* 확대/축소를 하든 배경 이미지를 전체에 덮는다 */
+    background-size: cover;
+}
+/* 배경을 조금 어둡게 하기 위해 바로 앞에 설정 */
+/* 가상 요소 선택자의 부모는 같이 사용한 선택자이다 */
+/* .section에 position이 선언되어 있으므로 absolute는 제데로 동작을 할 수 있다 */
+.section--visual::before {  
+    content: "";
+    position: absolute;
+    /* 모든 위치에 0을 입력할경우, width와 height 100%와 동일하게 동장 */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,.3);
+}
+.section--visual .inner {
+    padding: 160px 0;
+}
+.section--visual .summary__title {
+    color: #fff;
+    font-size: 54px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .25),
+                 0 1px 25px rgba(0, 0, 0, .75);
+}
+.section--visual .summary__description {
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .25),
+                 0 1px 25px rgba(0, 0, 0, .75);
 }
