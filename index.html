@@ -65,8 +65,8 @@
         <header class="section">
 
             <!-- container, inner, wrapper -->
-            <div class="inner">
-                <div class="menu-group">
+            <div class="inner clearfix">
+                <div class="menu-group float--left">
                     <div class="logo">
                         <a href="#">GitHub</a>
                     </div>
@@ -78,14 +78,15 @@
                     </ul>
                 </div>
 
-                <div class="sign-group">
+                <div class="sign-group float--right">
                     <!-- 반대로 작성 -->
                     <div class="btn-group">
                         <a href="#" class="btn sign-in">Sign in</a>
                         <a href="#" class="btn btn--primary sign-up">Sign up</a>
                     </div>
                     <form id="search-form" method="POST" action="">
-                        <input type="text" id="search" class="input--text" placeholder="Search GitHub">
+                        <input type="text" id="search" class="input--text" placeholder="Search GitHub"
+                            autocomplete="off">
                         <input type="submit" value="Submit">
                     </form>
                     <ul class="sub-menu">
