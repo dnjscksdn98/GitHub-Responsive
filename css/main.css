@@ -298,3 +298,45 @@ header .sub-menu li a:hover {
     width: 100%;
     height: 100%;
 }
+.section--feature .tiles {
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+.section--feature .tiles .inner {
+    /* inner의 최대 너비 재정의 */
+    max-width: 1200px;
+}
+.section--feature .tiles ul {
+    /* 신형 방법 - grid, flex
+       grid를 사용한 수평 정렬
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  4개의 칼럼 */
+}
+.section--feature .tiles li {
+    padding: 34px 24px;
+    text-align: center;
+    line-height: 1.5;
+    border-right: 1px solid #e5e5e5;
+    box-sizing: border-box;
+    /* 구형 방법 - 수평 정렬 */
+    float: left;
+    width: 25%;  /* 4개의 칼럼이므로 25%로 적용 */
+}
+.section--feature .tiles li:last-child {
+    border-right: none;
+}
+.section--feature .tiles li img {
+    /* 가로 너비에 대한 반응형 이미지로 설정 */
+    max-width: 100%;
+    padding: 14px 10% 24px;
+    box-sizing: border-box;
+}
+.section--feature .tiles li h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.section--feature .tiles li p {
+    font-size: 14px;
+    color: #767676
+}
